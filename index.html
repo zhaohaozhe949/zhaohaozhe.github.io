@@ -27,8 +27,8 @@
     .identity { font-size:19px; color:#43536a; margin-bottom:24px; }
     .lead { max-width:720px; font-size:17px; line-height:1.9; color:#334258; }
     .links { display:flex; flex-wrap:wrap; gap:10px 20px; margin-top:26px; font-size:14px; font-weight:600; }
-    .portrait { width:250px; aspect-ratio:4/5; border-radius:16px; background:linear-gradient(145deg,#dbe7ef,#b6cbdc); display:grid; place-items:center; color:#57728b; border:1px solid #cbd7df; overflow:hidden; }
-    .portrait img { width:100%; height:100%; object-fit:cover; }
+    .portrait { position:relative; width:250px; aspect-ratio:4/5; border-radius:16px; background:linear-gradient(145deg,#dbe7ef,#b6cbdc); display:grid; place-items:center; color:#57728b; border:1px solid #cbd7df; overflow:hidden; }
+    .portrait img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
     .portrait span { text-align:center; font-size:13px; letter-spacing:.08em; }
     section { padding:72px 0; border-bottom:1px solid var(--line); scroll-margin-top:75px; }
     .sectionhead { display:flex; justify-content:space-between; align-items:end; gap:20px; margin-bottom:26px; }
@@ -57,7 +57,7 @@
   </style>
 </head>
 <body>
-  <!-- 若要使用头像，可将 .portrait 内的 strong 改为 <img src="avatar.jpg" alt="赵浩喆">。 -->
+  <!-- 将头像命名为 avatar.jpg，与 index.html 上传到同一目录；没有图片时显示 HZ。 -->
   <header class="topbar">
     <nav class="wrap nav" aria-label="主导航">
       <a class="brand" href="#top" data-zh="赵浩喆 · Haozhe Zhao" data-en="Haozhe Zhao · 赵浩喆">赵浩喆 · Haozhe Zhao</a>
@@ -80,11 +80,12 @@
         <p class="identity" data-zh="复旦大学本科生 · 即将入学北京大学直博" data-en="Undergraduate at Fudan University · Incoming direct-entry PhD student at Peking University">复旦大学本科生 · 即将入学北京大学直博</p>
         <p class="lead" data-zh="我目前是复旦大学大四学生，即将进入北京大学攻读博士学位，导师为杨灵老师。我的研究方向是 LMM，也关注大模型与机器人系统的结合。近期项目涉及自然语言驱动的人形机器人动作生成与多机器人协同定位。" data-en="I am a final-year undergraduate at Fudan University and will pursue a direct-entry PhD at Peking University under Prof. Ling Yang. My research interest is LMM. My recent projects explore natural-language-driven humanoid motion and cooperative multi-robot localization.">我目前是复旦大学大四学生，即将进入北京大学攻读博士学位，导师为杨灵老师。我的研究方向是 LMM，也关注大模型与机器人系统的结合。近期项目涉及自然语言驱动的人形机器人动作生成与多机器人协同定位。</p>
         <div class="links">
+          <a href="mailto:23300720001@m.fudan.edu.cn">Email ↗</a>
           <a href="https://github.com/Ehzoah-Zhao" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           <a href="#work" data-zh="查看项目 ↓" data-en="View projects ↓">查看项目 ↓</a>
         </div>
       </div>
-      <div class="portrait" aria-label="HZ monogram"><strong>HZ</strong></div>
+      <div class="portrait"><strong>HZ</strong><img src="avatar.jpg" alt="赵浩喆的头像" onload="this.previousElementSibling.hidden=true" onerror="this.remove()"></div>
     </div>
 
     <section id="research">
@@ -113,7 +114,7 @@
     </section>
 
     <section id="contact">
-      <div class="contact"><div><h2 data-zh="保持联系" data-en="Connect">保持联系</h2><p data-zh="可以通过 GitHub 了解我的项目和后续更新。" data-en="Find my projects and future updates on GitHub.">可以通过 GitHub 了解我的项目和后续更新。</p></div><a class="button" href="https://github.com/Ehzoah-Zhao" target="_blank" rel="noopener noreferrer" data-zh="访问 GitHub ↗" data-en="Visit GitHub ↗">访问 GitHub ↗</a></div>
+      <div class="contact"><div><h2 data-zh="保持联系" data-en="Connect">保持联系</h2><p data-zh="欢迎通过邮箱联系我：23300720001@m.fudan.edu.cn" data-en="Feel free to email me at 23300720001@m.fudan.edu.cn">欢迎通过邮箱联系我：23300720001@m.fudan.edu.cn</p></div><a class="button" href="mailto:23300720001@m.fudan.edu.cn" data-zh="发送邮件 ↗" data-en="Send an email ↗">发送邮件 ↗</a></div>
     </section>
   </main>
   <footer class="wrap">© <span id="year">2026</span> <span data-zh="赵浩喆 · Haozhe Zhao" data-en="Haozhe Zhao · 赵浩喆">赵浩喆 · Haozhe Zhao</span></footer>
